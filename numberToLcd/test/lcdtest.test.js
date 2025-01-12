@@ -12,5 +12,32 @@ describe("number-to-lcd", () => {
     const topLine = lcdParser.getFirstLine();
 
     expect(topLine).toBe(" _ \n");
+  });  
+  
+  test("first line output by two numbers should be space, underscore, space, space, underscore, space and line break ( _  _ )", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilder(88);
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _  _ \n");
+  }); 
+  
+  test("second line output by two numbers should be |_| |_| line break", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilder(88);
+    const topLine = lcdParser.getSecondLine();
+
+    expect(topLine).toBe("|_||_|\n");
+  }); 
+  
+  test("third line output by two numbers should be |_| |_| line break", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilder(88);
+    const topLine = lcdParser.getThirdLine();
+
+    expect(topLine).toBe("|_||_|\n");
   });
 });
