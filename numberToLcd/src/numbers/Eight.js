@@ -1,13 +1,21 @@
-export default class Eight{
-    getFirstLine(){
-        return " _ "
-    }
-    
-    getSecondLine(){
-        return "|_|"
-    }
-    
-    getThirdLine(){
-        return "|_|"
-    }
+export default class Eight {
+  getAdditionalArrayOne() {
+    return ["|", " ", "|"];
+  }
+
+  getAdditionalArrayTwo() {
+    return ["|", " ", "|"];
+  }
+
+  getFirstArray() {
+    return [" ", "_", " "];
+  }
+
+  getSecondArray() {
+    return ["|", "_", "|"];
+  }
+
+  getThirdArray() {
+    return ["|", "_", "|"];
+  }
 }
