@@ -1,12 +1,4 @@
 export default class Eight {
-  getAdditionalArrayOne() {
-    return ["|", " ", "|"];
-  }
-
-  getAdditionalArrayTwo() {
-    return ["|", " ", "|"];
-  }
-
   getFirstArray() {
     return [" ", "_", " "];
   }

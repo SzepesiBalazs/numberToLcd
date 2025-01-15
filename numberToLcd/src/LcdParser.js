@@ -30,8 +30,16 @@ export default class LcdParser {
         this.firstLine += firstLineArray
           .toSpliced(1, 0, firstLineArray[1])
           .join("");
+        this.additionalLineOne += secondLineArray
+          .toSpliced(1, 1, " ")
+          .toSpliced(1, 0, " ")
+          .join("");
         this.secondLine += secondLineArray
           .toSpliced(1, 0, secondLineArray[1])
+          .join("");
+        this.additionalLineTwo += thirdLineArray
+          .toSpliced(1, 1, " ")
+          .toSpliced(1, 0, " ")
           .join("");
         this.thirdLine += thirdLineArray
           .toSpliced(1, 0, thirdLineArray[1])
@@ -45,9 +53,9 @@ export default class LcdParser {
 
     console.log(
       this.getFirstLine() +
-        //this.getAdditionalLineOne() +
+        this.getAdditionalLineOne() +
         this.getSecondLine() +
-        //this.getAdditionalLineTwo() +
+        this.getAdditionalLineTwo() +
         this.getThirdLine()
     );
   }
