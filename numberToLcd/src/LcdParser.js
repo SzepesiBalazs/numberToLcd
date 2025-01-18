@@ -108,20 +108,25 @@ export default class LcdParser {
         this.largeSizeArray[4] += thirdLineArray.join("");
 
         //console.log(this.additionalLineOne);
-
-        // for (let index = 1; index < this.size; index++) {
-        //   this.largeSizeArray = this.largeSizeArray.toSpliced(
-        //     1,
-        //     0,
-        //     this.additionalLineOne
-        //   );
-        // }
       } else {
         this.firstLine += source[n].getFirstArray().join("");
         this.secondLine += source[n].getSecondArray().join("");
         this.thirdLine += source[n].getThirdArray().join("");
       }
     });
+
+    for (let index = 2; index < this.size; index++) {
+      this.largeSizeArray = this.largeSizeArray.toSpliced(
+        1,
+        0,
+        this.largeSizeArray[1]
+      );
+      this.largeSizeArray = this.largeSizeArray.toSpliced(
+        this.largeSizeArray.length - 2,
+        0,
+        this.largeSizeArray[this.largeSizeArray.length - 2]
+      );
+    }
 
     console.log(this.largeSizeArray);
   }
