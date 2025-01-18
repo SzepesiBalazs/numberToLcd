@@ -20,48 +20,6 @@ export default class LcdParser {
     this.size = size;
   }
 
-  numberBuilder(inputNumber) {
-    const numberArray = inputNumber.toString().split("").map(Number);
-    numberArray.map((n) => {
-      const source = this.numberSource();
-      if (this.isLargeType) {
-        let firstLineArray = source[n].getFirstArray();
-        let secondLineArray = source[n].getSecondArray();
-        let thirdLineArray = source[n].getThirdArray();
-
-        this.firstLine += firstLineArray
-          .toSpliced(1, 0, firstLineArray[1])
-          .join("");
-        this.additionalLineOne += secondLineArray
-          .toSpliced(1, 1, " ")
-          .toSpliced(1, 0, " ")
-          .join("");
-        this.secondLine += secondLineArray
-          .toSpliced(1, 0, secondLineArray[1])
-          .join("");
-        this.additionalLineTwo += thirdLineArray
-          .toSpliced(1, 1, " ")
-          .toSpliced(1, 0, " ")
-          .join("");
-        this.thirdLine += thirdLineArray
-          .toSpliced(1, 0, thirdLineArray[1])
-          .join("");
-      } else {
-        this.firstLine += source[n].getFirstArray().join("");
-        this.secondLine += source[n].getSecondArray().join("");
-        this.thirdLine += source[n].getThirdArray().join("");
-      }
-    });
-
-    console.log(
-      this.getFirstLine() +
-        this.getAdditionalLineOne() +
-        this.getSecondLine() +
-        this.getAdditionalLineTwo() +
-        this.getThirdLine()
-    );
-  }
-
   numberBuilderV2(inputNumber) {
     const numberArray = inputNumber.toString().split("").map(Number);
     numberArray.map((n) => {
@@ -106,8 +64,6 @@ export default class LcdParser {
         this.largeSizeArray[2] += secondLineArray.join("");
         this.largeSizeArray[3] += additionalLineTwo.join("");
         this.largeSizeArray[4] += thirdLineArray.join("");
-
-        //console.log(this.additionalLineOne);
       } else {
         this.firstLine += source[n].getFirstArray().join("");
         this.secondLine += source[n].getSecondArray().join("");
@@ -127,8 +83,11 @@ export default class LcdParser {
         this.largeSizeArray[this.largeSizeArray.length - 2]
       );
     }
+    this.largeSizeArray = this.largeSizeArray.map((element) => {
+      return element.substring(9, element.length) + "\n";
+    });
 
-    console.log(this.largeSizeArray);
+    return this.largeSizeArray.join("");
   }
 
   getFirstLine() {
