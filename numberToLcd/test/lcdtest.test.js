@@ -58,4 +58,13 @@ describe("number-to-lcd", () => {
 
     expect(topLine).toBe(" __  __ \n");
   });
+
+  test.only("change horizontal size dynamically with 3", () => {
+    const lcdParser = new LcdParser(true, 3);
+
+    lcdParser.numberBuilderV2(88);
+    const topLine = lcdParser.largeSizeNumber.slice(0, 12);
+
+    expect(topLine).toBe(" ___  ___ \n");
+  });
 });
