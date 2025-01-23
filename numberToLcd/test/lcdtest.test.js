@@ -41,15 +41,6 @@ describe("number-to-lcd", () => {
     expect(topLine).toBe("|_||_|\n");
   });
 
-  test("first line output of 1 should be space ( )", () => {
-    const lcdParser = new LcdParser();
-
-    lcdParser.numberBuilderV2(1);
-    const topLine = lcdParser.getFirstLine();
-
-    expect(topLine).toBe("   \n");
-  });
-
   test("if isLargeType is true", () => {
     const lcdParser = new LcdParser(true, 2);
 
@@ -67,5 +58,77 @@ describe("number-to-lcd", () => {
     const topLine = v2builder.substring(0, 11);
 
     expect(topLine).toBe(" ___  ___ \n");
+  });
+
+  test("first line output of 1 should be space ( )", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(1);
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe("   \n");
+  });
+
+  test("if number 2 is working properly", () => {
+    const lcdParser = new LcdParser();
+    lcdParser.numberBuilderV2(2);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
+  });
+  test("if number 3 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(3);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
+  });
+  test("if number 4 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(4);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe("   \n");
+  });
+  test("if number 5 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(5);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
+  });
+  test("if number 6 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(6);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
+  });
+  test("if number 7 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(7);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
+  });
+  test("if number 9 is working properly", () => {
+    const lcdParser = new LcdParser();
+
+    lcdParser.numberBuilderV2(9);
+
+    const topLine = lcdParser.getFirstLine();
+
+    expect(topLine).toBe(" _ \n");
   });
 });

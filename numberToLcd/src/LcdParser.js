@@ -31,33 +31,15 @@ export default class LcdParser {
         let additionalLineOne = source[n].getSecondArray().toSpliced(1, 1, " ");
         let additionalLineTwo = source[n].getThirdArray().toSpliced(1, 1, " ");
 
-        for (let index = 1; index < this.size; index++) {
-          firstLineArray = firstLineArray.toSpliced(1, 0, firstLineArray[1]);
-        }
+        firstLineArray = this.arrayTransformer(firstLineArray);
 
-        for (let index = 1; index < this.size; index++) {
-          secondLineArray = secondLineArray.toSpliced(1, 0, secondLineArray[1]);
-        }
+        secondLineArray = this.arrayTransformer(secondLineArray);
 
-        for (let index = 1; index < this.size; index++) {
-          thirdLineArray = thirdLineArray.toSpliced(1, 0, thirdLineArray[1]);
-        }
+        thirdLineArray = this.arrayTransformer(thirdLineArray);
 
-        for (let index = 1; index < this.size; index++) {
-          additionalLineOne = additionalLineOne.toSpliced(
-            1,
-            0,
-            additionalLineOne[1]
-          );
-        }
+        additionalLineOne = this.arrayTransformer(additionalLineOne);
 
-        for (let index = 1; index < this.size; index++) {
-          additionalLineTwo = additionalLineTwo.toSpliced(
-            1,
-            0,
-            additionalLineTwo[1]
-          );
-        }
+        additionalLineTwo = this.arrayTransformer(additionalLineTwo);
 
         this.largeSizeArray[0] += firstLineArray.join("");
         this.largeSizeArray[1] += additionalLineOne.join("");
@@ -88,6 +70,13 @@ export default class LcdParser {
     });
 
     return this.largeSizeArray.join("");
+  }
+
+  arrayTransformer(lineArray) {
+    for (let index = 1; index < this.size; index++) {
+      lineArray = lineArray.toSpliced(1, 0, lineArray[1]);
+    }
+    return lineArray;
   }
 
   getFirstLine() {
