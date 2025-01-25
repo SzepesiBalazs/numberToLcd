@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number To LCD</title>
+    <script src="https://cdn.jsdelivr.net/npm/lcd-dojo@1.1.0/dist/lcd-dojo.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #lcd {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number To LCD</h1>
+
+    <input
+      type="number"
+      id="inputNumber"
+      placeholder="Enter a number"
+      minlength="1"
+      maxlength="15"
+    />
+
+    <h2 id="lcd-line-one"></h2>
+    <h2 id="lcd-line-two"></h2>
+    <h2 id="lcd-line-three"></h2>
+
+    <!-- Move the script tag to the end of the body -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

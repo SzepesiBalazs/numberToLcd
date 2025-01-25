@@ -1,12 +1,12 @@
-import Eight from "../src/numbers/Eight";
-import One from "../src/numbers/One";
-import Two from "../src/numbers/Two";
-import Three from "../src/numbers/Three";
-import Four from "../src/numbers/Four";
-import Five from "../src/numbers/Five";
-import Six from "../src/numbers/Six";
-import Seven from "../src/numbers/Seven";
-import Nine from "../src/numbers/Nine";
+import Eight from "../src/numbers/Eight.js";
+import One from "../src/numbers/One.js";
+import Two from "../src/numbers/Two.js";
+import Three from "../src/numbers/Three.js";
+import Four from "../src/numbers/Four.js";
+import Five from "../src/numbers/Five.js";
+import Six from "../src/numbers/Six.js";
+import Seven from "../src/numbers/Seven.js";
+import Nine from "../src/numbers/Nine.js";
 
 export default class LcdParser {
   constructor(isLargeType = false, size = 0) {
@@ -78,17 +78,16 @@ export default class LcdParser {
     }
     return lineArray;
   }
-
   getFirstLine() {
-    return this.firstLine + "\n";
+    return this.firstLine;
   }
 
   getSecondLine() {
-    return this.secondLine + "\n";
+    return this.secondLine;
   }
 
   getThirdLine() {
-    return this.thirdLine + "\n";
+    return this.thirdLine;
   }
 
   getAdditionalLineOne() {
