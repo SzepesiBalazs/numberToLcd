@@ -11,3 +11,7 @@ inputElement.addEventListener("input", () => {
   document.getElementById("lcd-line-three").innerHTML =
     lcdParser.getThirdLine();
 });
+
+window.validateNumberLength = function(input) {
+  input.value = input.value.replace(/[^0-9]/g, "");
+}

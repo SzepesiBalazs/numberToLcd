@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Style the input field */
+input[type="text"] {
+  width: 250px; /* Set width to make it uniform */
+  padding: 10px;
+  font-size: 16px;
+  text-align: center; /* Center text inside input */
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Center the .lcd-numbers container and ensure it's responsive */
+.lcd-numbers {
+  display: grid;
+  grid-template-rows: repeat(3, 50px); /* 3 lines of the LCD */
+  grid-gap: 10px; /* Space between rows */
+  justify-items: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 350px; /* Set width to make it uniform */
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto; /* Center the .lcd-numbers div */
+  padding: 10px;
+}
+
+/* Style each line (h2) within the grid */
+h2 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px;
+  white-space: nowrap; /* Prevent wrapping */
+  text-align: center;
+  width: 100%; /* Ensure full width to evenly align the text */
+  line-height: 50px; /* Vertically center the text inside each line */
+}
+
+#lcd-line-one,
+#lcd-line-two,
+#lcd-line-three {
+  margin-top: 20px;
+  min-height: 50px; /* Ensure each line has the same height */
+  line-height: 50px; /* Vertically center the text inside each line */
+}

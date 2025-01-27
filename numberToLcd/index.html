@@ -5,33 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Number To LCD</title>
     <script src="https://cdn.jsdelivr.net/npm/lcd-dojo@1.1.0/dist/lcd-dojo.min.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
-      }
-      #lcd {
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="styling.css" />
   </head>
   <body>
     <h1>Number To LCD</h1>
 
     <input
-      type="number"
+      type="text"
       id="inputNumber"
       placeholder="Enter a number"
-      minlength="1"
+      minlength="0"
       maxlength="15"
+      oninput="validateNumberLength(this)"
     />
 
-    <h2 id="lcd-line-one"></h2>
-    <h2 id="lcd-line-two"></h2>
-    <h2 id="lcd-line-three"></h2>
+    <div class="lcd-numbers">
+      <h2 id="lcd-line-one"></h2>
+      <h2 id="lcd-line-two"></h2>
+      <h2 id="lcd-line-three"></h2>
+    </div>
 
-    <!-- Move the script tag to the end of the body -->
     <script type="module" src="main.js"></script>
   </body>
 </html>
