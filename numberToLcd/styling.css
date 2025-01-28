@@ -51,3 +51,11 @@ h2 {
   min-height: 50px; /* Ensure each line has the same height */
   line-height: 50px; /* Vertically center the text inside each line */
 }
+
+.group {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 3px;
+  background-color: lightblue;
+  width: 15px;
+}
