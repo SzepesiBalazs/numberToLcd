@@ -22,6 +22,9 @@ export default class LcdParser {
 
   numberBuilderV2(inputNumber) {
     const numberArray = inputNumber.toString().split("").map(Number);
+    this.firstLine = "";
+    this.secondLine = "";
+    this.thirdLine = "";
     numberArray.map((n) => {
       const source = this.numberSource();
       if (this.isLargeType) {
